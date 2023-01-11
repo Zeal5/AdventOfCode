@@ -34,3 +34,13 @@ def size(start):
 
 qwer = 70000000
 
+o = 0
+free = qwer - size(('/',))
+req = 30000000 - free
+asdf = float('inf')
+for i in stuff:
+    print(i, size(i))
+    if size(i) >= req:
+        print(i, size(i))
+        asdf = min(asdf, size(i))
+print(asdf)
