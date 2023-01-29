@@ -20,17 +20,37 @@ with open("2022\day_5input.txt" , "r") as file:
     arrangment = map(lambda x: syntax.findall(x), f)
 
 
-for row in arrangment:
-  
-    for i in range(int(row[0])):
+def part1(_quantity:int , _from:int , _to:int ) -> int:
+
+    for _ in range(int(_quantity)):
         try:
-            item =  stacks[int(row[1]) -1].pop()
+            item =  stacks[int(_from) -1].pop()
         except IndexError:
             pass
-        stacks[int(row[2]) - 1].append(item)
+        stacks[int(_to) - 1].append(item)
 
 
-ans = ''
-for h in stacks:
-    ans += h[-1]
-print(ans.upper())
+def part2(_quantity:int , _from:int , _to:int ) -> int:
+
+    items = stacks[int(_from) - 1][-int(_quantity):]
+    #to
+    for i in items:
+        stacks[int(_to)-1].append(i)
+        stacks[int(_from) - 1].pop()
+
+    
+
+def handler():
+    for row in arrangment:
+        _quantity, _from, _to = row
+        if int(_quantity) > 1:
+            part2(_quantity, _from, _to)
+        else:
+            part1(_quantity, _from, _to)
+
+
+    ans = ''
+    for h in stacks:
+        ans += h[-1]
+    print(ans.upper())    
+handler()
