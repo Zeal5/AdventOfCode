@@ -1,3 +1,6 @@
+"""https://adventofcode.com/2022/day/3"""
+
+
 import string
 #fuirst half
 uppercase = string.ascii_uppercase

@@ -1,3 +1,5 @@
+"""https://adventofcode.com/2022/day/7"""
+
 curr_dir = ['/']
 stuff = {}
 y = []

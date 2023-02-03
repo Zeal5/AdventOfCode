@@ -1,3 +1,5 @@
+"""https://adventofcode.com/2022/day/4"""
+
 counter = 0
 def check(fa:int,sa:int):
     global counter
